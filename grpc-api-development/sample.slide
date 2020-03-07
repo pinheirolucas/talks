@@ -1,0 +1,7 @@
+Desenvolvimento de API's gRPC
+
+*  Display all code
+.code hello.go
+
+Display only main
+.play hello.go /^//START MAIN/,/^//END MAIN/ HL12
