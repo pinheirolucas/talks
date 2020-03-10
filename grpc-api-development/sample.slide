@@ -3,5 +3,11 @@ Desenvolvimento de API's gRPC
 *  Display all code
 .code hello.go
 
-Display only main
+Play go file
 .play hello.go /^//START MAIN/,/^//END MAIN/ HL12
+
+Play JS file
+.play hello.js /^//START MAIN/,/^//END MAIN/
+
+Play python file
+.play hello.py /^//START MAIN/,/^//END MAIN/
