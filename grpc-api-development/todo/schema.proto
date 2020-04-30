@@ -1,0 +1,64 @@
+syntax = "proto3";
+package schema;
+
+option go_package = "schema";
+
+service TodoService {
+  rpc NewTodo (NewTodoRequest) returns (NewTodoResponse) {}
+  rpc GetTodo (GetTodoRequest) returns (GetTodoResponse) {}
+  rpc ListTodo (ListTodoRequest) returns (ListTodoResponse) {}
+  rpc SetTodo (SetTodoRequest) returns (SetTodoResponse){}
+  rpc DelTodo (DelTodoRequest) returns (DelTodoResponse) {}
+}
+
+message NewTodoRequest {
+  Todo todo = 1;
+}
+
+message NewTodoResponse {
+  Todo todo = 1;
+}
+
+message GetTodoRequest {
+  string id = 1;
+}
+
+message GetTodoResponse {
+  Todo todo = 1;
+}
+
+message ListTodoRequest {
+  TodoStatus status = 1;
+}
+
+message ListTodoResponse {
+  repeated Todo todos = 1;
+}
+
+message SetTodoRequest {
+  Todo todo = 1;
+}
+
+message SetTodoResponse {
+  Todo todo = 1;
+}
+
+message DelTodoRequest {
+  string id = 1;
+}
+
+message DelTodoResponse {
+  Todo todo = 1;
+}
+
+enum TodoStatus {
+  UNKNOWN = 0;
+  ACTIVE = 1;
+  COMPLETED = 2;
+}
+
+message Todo {
+  string id = 1;
+  string description = 2;
+  TodoStatus status = 3;
+}
