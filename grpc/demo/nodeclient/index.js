@@ -11,7 +11,7 @@ async function main() {
   );
 
   const loginRequest = new authMessages.LoginRequest()
-    .setUsername("pinheirolucas")
+    .setUsername("node")
     .setPassword("qwe123");
 
   const login = util.promisify(authClient.login.bind(authClient))

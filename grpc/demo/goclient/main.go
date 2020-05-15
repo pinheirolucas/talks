@@ -31,7 +31,7 @@ func main() {
 	client := pb.NewAuthServiceClient(conn)
 
 	loginResponse, err := client.Login(context.Background(), &pb.LoginRequest{
-		Username: "pinheirolucas",
+		Username: "go",
 		Password: "qwe123",
 	})
 	if err != nil {

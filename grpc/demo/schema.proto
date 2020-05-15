@@ -1,7 +1,7 @@
 syntax = "proto3";
 package schema;
 
-option go_package = "client/pb";
+option go_package = "goclient/pb";
 
 service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
