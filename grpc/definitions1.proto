@@ -1,0 +1,19 @@
+syntax "proto3";
+
+message MessageWithListField {
+  repeated string names = 1;
+}
+
+message MessageWithMapField {
+  map<string, string> mappings = 1;
+}
+
+message MessageWithNestedMessage {
+  message Loko {
+    string id = 1;
+  }
+
+  Loko loko = 1;
+  MessageWithListField list_message = 2;
+  MessageWithMapField map_message = 3;
+}

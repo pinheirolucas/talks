@@ -1,0 +1,22 @@
+syntax "proto3";
+
+enum Batata {
+  UNKNOWN = 0;
+  FRITA = 1;
+  PALHA = 2;
+}
+
+message Onibus {
+  bool pegar = 1;
+}
+
+message Goiaba {
+  bool comprar = 1;
+}
+
+message MessageIndecisa {
+  oneof pego_o_onibus_ou_compro_goiaba {
+    Onibus onibus = 1;
+    Goiaba goiaba = 2;
+  }
+}

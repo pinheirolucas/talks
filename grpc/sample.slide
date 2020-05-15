@@ -1,0 +1,112 @@
+Um overview sobre gGRPC
+
+* Sobre RPC
+
+*R* emote
+*P* rocedure
+*C* all
+
+- Comunicação entre processos em algum outro endereço
+- O cliente desconhece detalhes da implementação
+- Não necessariamente está vinculado a um protocolo específico
+
+* Ou seja...
+
+É uma maneira para chamar funçõezinhas de forma remotas
+
+* Tá, mas e o gRPC meu quirido?
+
+*g* RPC
+*R* Remote
+*P* Procedure
+*C* Call
+
+.image images/doguinho.gif _ 300
+
+* Sobre do projeto
+
+- Sucessor do Stubby RPC
+- Open-source
+- Framework RPC de flexível
+- Alta performance no transporte dos pacotes
+- Projeto incubado na CNCF (Kubernetes, Prometheus, Envoy e etc)
+
+* Características do framework
+
+- Utiliza Protobuf como formato de serialização/deserialização
+- Funciona com base em geração de código
+- Geração de stubs tanto para client quanto para server side
+
+* Ok, mas como diabos esse gRPC gera código?
+
+- Protobuf IDL
+
+.code product_service.proto
+
+* Calma, então cê tá me dizendo que...
+
+- Geração de código cliente e servidor para várias linguagens
+- Respeita as convenções das linguagens
+- Utiliza a stdlib das linguagens, mas precisa adicionar dependências específicas
+
+.image images/excited.gif _ 400
+
+* Mas calma aí gente!
+
+- Android
+- C#
+- C++
+- Dart
+- Go
+- Java
+- Kotlin/JVM
+- Node
+- Objective-C
+- PHP
+- Python
+- Ruby
+
+* Existem implementações não oficiais, mas...
+
+.image images/suspecious.gif
+
+* Poxa cara, muito legal esse treco aí. Mas...
+
+Como eu faço pra retornar uma lista?
+Como eu faço pra retornar um map?
+Como eu faço pra enviar um payload muito grande tipo um arquivo?
+Como eu faço pra pra receber atualizações em tempo real?
+Como eu faço pra autenticar meus clients?
+
+*
+
+.image images/chill.gif
+
+* Definições no Protobuf - lists, maps e nested messages
+
+.code definitions1.proto
+
+* Definições no Protobuf - enuns e oneof.
+
+.code definitions2.proto
+
+* Tipos de chamadas RPC
+
+- RPC unária: cliente abre uma conexão, enviar um payload com os dados e o servidor envia uma resposta;
+- Client streaming: o cliente mantém uma conexão aberta com o servidor e envia múltiplas mensagens;
+- Server streaming: o servidor mantém uma conexão aberta com o cliente e envia múltiplas mensagens;
+- Streaming bidirecional: o cliente e o servidor podem enviar múltiplas mensagens um para o outro usando a mesma conexão.
+
+* Exemplos
+
+.code calls.proto
+
+* Loko, quero usar, como faz?
+
+.image images/question.gif
+
+* Dúvidas?
+
+.image images/fuba.png
+
+

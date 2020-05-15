@@ -1,0 +1,13 @@
+service ExampleService {
+  // Request/Response one tap
+  rpc Unary(Request) returns (Response);
+
+  // Client mantém a conexão aberta enviando mensagens
+  rpc ClientStream (stream Request) returns (Response);
+
+  // Server mantém a conxão aberta enviando mensagens
+  rpc ServerStream (Request) returns (stream Response);
+
+  // Client/Server trocam mensagens entre si sem fechar a conexão
+  rpc BidirectionalStream (stream Request) returns (stream Response);
+}
