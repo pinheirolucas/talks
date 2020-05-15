@@ -47,7 +47,7 @@ Um overview sobre gGRPC
 
 - Geração de código cliente e servidor para várias linguagens
 - Respeita as convenções das linguagens
-- Utiliza a stdlib das linguagens, mas precisa adicionar dependências específicas
+- Utiliza a stdlib das linguagens + libs do próprio gRPC
 
 .image images/excited.gif _ 400
 
@@ -76,7 +76,6 @@ Como eu faço pra retornar uma lista?
 Como eu faço pra retornar um map?
 Como eu faço pra enviar um payload muito grande tipo um arquivo?
 Como eu faço pra pra receber atualizações em tempo real?
-Como eu faço pra autenticar meus clients?
 
 *
 
@@ -105,8 +104,12 @@ Como eu faço pra autenticar meus clients?
 
 .image images/question.gif
 
+* Referencias
+
+.link https://grpc.io/docs/talks/ Página com uma série de talks sobre gRPC
+.link https://grpc.io/docs/ Página de documentação do gRPC
+.link https://www.youtube.com/watch?v=RoXT_Rkg8LA Talk muito boa sobre o porque de usar gRPC
+
 * Dúvidas?
 
 .image images/fuba.png
-
-
