@@ -1,0 +1,93 @@
+clivup
+A CLI que irá resolver os seus problemas 👀
+
+* Você precisa criar usuários de serviço?
+
+.image images/yep1.gif 400 _
+
+* Você quer gerar um token pra fazer requests pra alguma API?
+
+.image images/yep2.gif 400 _
+
+* Quer automatizar processos repetitivos que você faz com frequência e que não possuem documentação?
+
+.image images/yep3.gif 400 _
+
+* Seus problemas acabaram
+
+.image images/fall.gif 400 _
+
+* Com a clivup, você pode...
+
+* Calma, calma, não é esse tipo de propaganda...
+
+* O que é a clivup?
+
+- Projeto iniciado em um tech fun day do squad Ops. Hopper
+- CLI + Liv Up = clivup
+- Ferramenta de linha de comando
+- Automação de processos de tech
+
+* Com quais tecnologias a clivup foi construída?
+
+- Go
+- Cobra
+
+* O que a clivup já atende hoje?
+
+- Autenticação usando seu usuário da Liv Up
+- Opção para executar as ações em staging ou production
+- A autenticação também é persistida separadamente para cada um dos ambientes
+- Criação de usuários de serviço
+- Geração de token de autenticação
+
+- Execução manual do processamento de invoices do logistics
+- Geração de imagens para etiquetas de posições do WMS
+
+* O que ela pode atender?
+
+- Qualquer processo frequente que pode ser automatizado de alguma forma
+- Automações que exijam autenticação de usuários
+- Outras automações simples que seriam úteis para um ou mais times
+
+* O ela não deve atender?
+
+- Funcionalidades que deveriam estar nos sistemas
+
+* Qual é o estado de desenvolvimento?
+
+- Quase toda a semana alguém do Ops. Hopper adiciona ou corrige algo
+- Ainda não temos testes (<insira uma imagem do Paulo triste aqui 😞>)
+- Roda em Mac x64, qualquer distro linux x86 ou x64, windows x86 ou x64
+- Tem fluxo de release completo com versionamento e scripts de instalação
+
+* Como eu faço pra usar essa maravilha?
+
+.link https://github.com/livup/clivup Segue o bonde
+
+* Quero aprender Go e quero contribuir pra clivup, como faço?
+
+1. Clonar o repositório
+2. Instalar a versão mais recente do Go
+3. Fazer a build do projeto com base na documentação do README do projeto
+4. Qualquer dúvida, me chama no slack @pinheirolucas 😉
+
+Se a galera animar eu curto a ideia de fazermos um workshop de Go 👀
+
+* E aí, bora contribuir?
+
+.image images/joinus.gif 400 _
+
+*
+
+* Era o Fubá que vocês queriam?
+
+.image images/fuba-reflexivo.png 500 _
+
+* Era a Bijú?
+
+.image images/biju-gato-de-botas.png 500 _
+
+* Toma os dois então!
+
+.image images/megazord.png 500 _
