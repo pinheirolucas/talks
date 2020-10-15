@@ -1,4 +1,91 @@
 etcd
 DB Talks, Ep. 3
 
-* placeholder
+* O que é? Aonde mora? Do que se alimenta?
+
+.image gifs/what-is.gif 500 _
+
+* ...
+
+- "Banco de dados" de armazenamento chave valor
+
+* E de onde vem o nome?
+
+*etc*
+
+Diretório utilizado para guardar configuraçoes a nível de sistema em SO's unix
+
+*d*
+
+Distribuído
+
+*Ou* *seja...*
+
+Sistema de armazenamento de configurações distribuído
+
+* Características do projeto
+
+- Open-source
+- Escrito em Go
+- Setup súper simples, apenas um binário
+- Projeto incubado na CNCF (Kubernetes, Prometheus, Envoy e etc)
+- Atende casos de uso semelhantes aos do zookeeper ou consul
+
+* Funcionalidades do banco de dados
+
+- Armazenamento de dados em formato chave-valor, aninhados ou não aninhados
+- Versionamento de chaves (com ressalvas)
+- Escutar modificações causadas por escritas em chaves ou ranges de chaves
+- Consultas simples por meio da representação de string das chaves
+- Iteração e paginação de chaves
+
+* Ou seja, ele te atenderá muito bem em casos de uso como...
+
+- Um simples centralizador de configurações para sistemas/aplicações distribuídas
+- Implementações de service discovery
+- Hot reload de configurações de aplicações ou ferramentas
+- Armazenamento de dados simples e não relacionados
+
+* Autenticação
+
+- Simples orientada a usuário e senha
+- Por meio de certificados SSL (vem de graça por conta do gRPC)
+
+* Interação com o etcd
+
+- Expõe uma API gRPC
+- Portanto é compatível com qualquer linguagem suportada oficialmente pelo gRPC
+- Também utiliza o gRPC gateway como camada de compatibilidade para linguagens não suportadas pelo gRPC
+
+* Então quer dizer que eu posso gerar meu próprio client?
+
+.image gifs/yep.gif 400 _
+
+* ...
+
+Mas esse é um caso de uso extremo
+
+* Suporte a TTL
+
+- Implementação por meio de lease
+- Cada lease pode ser atribuída para mais de uma chave
+- Quando a condição para a lease for atendida, todas as chaves são invalidadas/excluídas
+
+* Modelo de armazenamento
+
+- Os pares de chave/valor são imutáveis
+- Ordenação lexica para as chaves salvas
+- Persistência em disco por meio de um arquivo de logs (semelhante a utilizada no modo AOF do redis)
+- Ao ultrapassar os limites de uso configurados, o arquivo de logs é compactado
+
+* Aplicações e ferramentas com suporte ao etcd
+
+- Kubernetes (persiste o estado do cluster)
+- gRPC (service discovery)
+- Envoy
+
+* Links úteis
+
+.link https://etcd.io/ Documentação
+
+* Dúvidas?
