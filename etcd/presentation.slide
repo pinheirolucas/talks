@@ -78,6 +78,114 @@ Mas esse é um caso de uso extremo
 - Persistência em disco por meio de um arquivo de logs (semelhante a utilizada no modo AOF do redis)
 - Ao ultrapassar os limites de uso configurados, o arquivo de logs é compactado
 
+* Interação com o etcd
+
+Escrever em uma chave
+
+  $ etcdctl put user-service1 http://localhost:3001
+  OK
+
+Escrever em uma chave com lease
+
+  $ etcdctl put user-service2 http://localhost:3002 --lease=1234abcd
+  OK
+
+* Interação com o etcd
+
+Dado um cluster com os seguintes dados armazenados
+
+  user-service1 = http://localhost:3001
+  user-service2 = http://localhost:3002
+  user-service3 = http://localhost:3003
+  user-service4 = http://localhost:3004
+
+Ler dados de uma chave
+
+  $ etcdctl get user-service1
+  user-service1
+  http://localhost:3001
+
+* Interação com o etcd
+
+Ler dados entre as chaves user-service1 e user-service4
+
+  $ etcdctl get user-service1 user-service4
+  user-service1
+  http://localhost:3001
+  user-service2
+  http://localhost:3002
+  user-service3
+  http://localhost:3003
+
+Considera intervalo meio aberto, ou seja, inclui o primeiro elemento e ignora o último
+
+* Interação com o etcd
+
+Ler chaves com determinado prefixo, limitando os resultados
+
+  $ etcdctl get --prefix --limit=2 user-service
+  user-service1
+  http://localhost:3001
+  user-service2
+  http://localhost:3002
+
+* Interação com o etcd
+
+Ler chaves em revisões diferentes
+
+Dados os seguintes comandos de escrita
+
+  $ etcdctl put user-service1 http://localhost:3001
+  $ etcdctl put user-service2 http://localhost:3002
+  $ etcdctl put user-service3 http://localhost:3003
+  $ etcdctl put user-service4 http://localhost:3004
+
+Ler a revisão 4 das chaves prefixadas com *user-service*
+
+  $ etcdctl get --prefix --rev=4 user-service
+  user-service1
+  http://localhost:3001
+  user-service2
+  http://localhost:3002
+  user-service3
+  http://localhost:3003
+  user-service4
+  http://localhost:3004
+
+* Interação com o etcd
+
+Ler a revisão 2 das chaves prefixadas com *user-service*
+
+  $ etcdctl get --prefix --rev=2 user-service
+  user-service1
+  http://localhost:3001
+  user-service2
+  http://localhost:3002
+
+* Interação com o etcd
+
+Escutar por modificações em uma chave
+
+  $ etcdctl watch user-service1
+  # alguém executa etcdctl put user-service1 http://localhost:3004
+  PUT
+  user-service1
+  http://localhost:3004
+
+Escutar por modificações em um range de chaves
+
+  $ etcdctl watch user-service1 user-service3
+  # alguém executa etcdctl put user-service1 http://localhost:3004
+  PUT
+  user-service1
+  http://localhost:3004
+  # alguém executa etcdctl put user-service2 http://localhost:3005
+  PUT
+  user-service2
+  http://localhost:3005
+  # alguém executa etcdctl put user-service3 http://localhost:3006
+  ...nada acontece feijoada
+
 * Aplicações e ferramentas com suporte ao etcd
 
 - Kubernetes (persiste o estado do cluster)
