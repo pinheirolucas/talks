@@ -1,9 +1,9 @@
 Aventuras da quarentena
 Discord Instants Player
 
-* O que é essa talk?
+* Qual o objetivo dessa talk?
 
-- Apresentarei um projeto que criei durante o início da quarentena
+- Mostrar um projetinho pessoal que criei durante o início da quarentena
 - A talk vai ser bem leve só pra mostrar os resultados que eu obtive
 
 * Lá estava eu...
@@ -29,68 +29,21 @@ Discord Instants Player
 
 .video videos/perdeu-partida.mp4 video/mp4 400 _
 
-* Ideia inicial
+* Como começou?
 
 - Criar um bot pro discord com capacidade de reproduzir arquivos de áudio em canais de voz
-- Criar uma API que exponha endpoints para reprodução de áudio por meio do bot
+- Criar uma API para fazer interface entre o usuário e o bot
 - Criar uma soundboard com suporte a adicionar áudios
 
-* Stack do projeto
+* Como terminou?
 
 - Criei repositórios separados para o back-end e para o front-end
 - Optei por usar Go no back-end por conta da funcionalidade de cross compile e pela simplicidade dos artefatos gerados
 - Optei por usar React com Javascript em um runtime electron para o front-end
-
-* Show tudo implementado...
-
-.image images/done.gif 400 _
-
-* Até que eu mostrei pra galerinha que joga online comigo
-
-- É meio chato ter que minimizar o jogo pra tocar os áudios
-- Queria adicionar áudios de outras fontes que não apenas o myinstants.com
-- É meio chato ter que adicionar os áudios manualmente
-
-* E lá vamos nós...
-
-.image images/here-we-go.gif 400 _
-
-* Soluções adotadas para os pontos do feedback
-
-- Soundboard móvel utilizando Flutter para não precisar minimizar o jogo
-- Suporte a arquivos de áudio de outras fontes
-- Endpoint que faz scraping na página do myinstants.com
-
-* Eu até comecei a desenvolver um app...
-
-* Mas enquanto meu app estava assim
-
-.image images/meu-app.jpeg _ 260
-
-* Um dos meus amigos já tinha desenvolvido um assim
-
-.image images/app-djow.jpeg _ 260
-
-* Ufa! Agora acabou né pessoal? Né?
-
-.image images/nope.gif 400 _
-
-* Aí o Matheus chega e me fala
-
-Sabe o que seria legal? Se desse pra tocar sons com base nos eventos do CS
-
-* Aí eu vou pro google e...
-
-.image images/csgo.png 500 _
-
-* Vou implementar isso?
-
-.image images/nope2.gif 400 _
-
-* Resultado
-
-- Compartilhei a ideia num grupo com algumas pessoas desenvolvedoras
-- Uma dessas pessoas já estava lelé da cuca com a quarentena e criou uma implementação
+- Soundboard mobile utilizando Flutter para não precisar minimizar o jogo na hora de tocar o áudio
+- Scraping na página do myinstants.com utilizando uma lib chamada goquery
+- Webhook pra tocar sons reagindo a eventos dentro da partida do CS
+- Wizzards de instalação para a UI e o server no windows
 
 * Muito legal Lucas, mas cadê o link desses projetos?
 
@@ -106,3 +59,7 @@ Sabe o que seria legal? Se desse pra tocar sons com base nos eventos do CS
 * Dúvidas?
 
 .image images/duvidas.png 525 _
+
+* Dúvidas?
+
+.image images/fuba-vs-biju.gif
